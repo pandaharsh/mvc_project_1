@@ -1,7 +1,7 @@
 <?php
 
-require_once('./controller/signup.php');
+require_once('./core/app.php');
 
-$obj = new signup();
+$obj = new app();
 
 ?>

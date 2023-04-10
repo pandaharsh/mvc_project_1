@@ -1,21 +1,25 @@
 <?php
+include("./core/controller.php");
 
-class signup
+class signup extends controller
 {
+
+    private $username;
+    private $title;
+    private $description;
 
     public function __construct()
     {
         include("./view/signup.php");
 
         //declaring all variables
-        $username = $_POST['username'];
-        $title = $_POST['title'];
-        $description = $_POST['description'];
+        $this->username = $_POST['username'];
+        $this->title = $_POST['title'];
+        $this->description = $_POST['description'];
 
+        $this->model($this->username, $this->title, $this->description);
 
-        include("./controller/control.php");
-
-        $obj = new controlmodel($username, $title, $description);
+        $this->view("signup");
 
     }
 
