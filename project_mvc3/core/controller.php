@@ -6,7 +6,7 @@ class controller
     {
         include("./model/Database.php");
 
-        $db = new database;
+        $db = new database($username, $title, $description);
 
     }
     public function view($name)

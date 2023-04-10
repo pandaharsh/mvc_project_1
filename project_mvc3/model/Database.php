@@ -1,14 +1,21 @@
 <?php
 class database
 {
-    private $conn;
-    private $DB_NAME = "Blogs";
-    private $TABLE_NAME = "User_blog";
+    protected $conn;
+    protected $DB_NAME = "Blogs";
+    protected $TABLE_NAME = "User_blog";
 
-    public function __construct()
+    public function __construct($username, $title, $description)
     {
-        $con = mysqli_connect('localhost', 'root');
-        $this->conn = $con;
+        $this->conn = mysqli_connect('localhost', 'root');
+
+        if ($this->conn) {
+
+            $this->create($username, $title, $description);
+
+        } else {
+            echo "connection failed";
+        }
     }
 
     public function create($username, $title, $description)

@@ -2,7 +2,7 @@
 
 class app
 {
-    private $param = 'home';
+    protected $param = 'signup';
 
     public function __construct()
     {
@@ -25,7 +25,7 @@ class app
         } else {
 
             require('./controller/signup.php');
-            $obj = new signup();
+            $obj = new signup;
 
         }
     }
