@@ -2,7 +2,7 @@
 
 include("./core/controller.php");
 
-class signup extends controller
+class home extends controller
 {
 
     protected $username;
@@ -12,12 +12,12 @@ class signup extends controller
     public function __construct()
     {
 
-        //declaring all variables
         $this->username = $_POST['username'];
         $this->title = $_POST['title'];
         $this->description = $_POST['description'];
 
         $this->view("signup");
+
         $this->model($this->username, $this->title, $this->description);
 
     }

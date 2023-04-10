@@ -14,9 +14,9 @@ $form = '
         <form action="index.php" method="post">
             User name:
             <input type="text" name="username" /><br /><br />
-            Title: 
+            password:
             <input type="text" name="title" /><br /><br />
-            description: 
+            User as admin: 
             <input type="text" name="description" /><br /><br />
             <input type="submit"  value="Sign up"/>
         </form><br /><br />

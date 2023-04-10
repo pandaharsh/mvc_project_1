@@ -7,10 +7,10 @@ class database
 
     public function __construct($username, $title, $description)
     {
-        $this->conn = mysqli_connect('localhost', 'root');
+        $con = mysqli_connect('localhost', 'root');
 
-        if ($this->conn) {
-
+        if ($con) {
+            $this->conn = $con;
             $this->create($username, $title, $description);
 
         } else {

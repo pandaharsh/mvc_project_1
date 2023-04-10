@@ -2,7 +2,7 @@
 
 class app
 {
-    protected $param = 'signup';
+    protected $param = 'home';
 
     public function __construct()
     {
@@ -19,13 +19,13 @@ class app
 
         if (file_exists('./controller/' . $this->param . '.php')) {
 
-            require('./controller/' . $this->param . '.php');
+            require_once('./controller/' . $this->param . '.php');
             $obj = new $this->param();
 
         } else {
 
-            require('./controller/signup.php');
-            $obj = new signup;
+            require_once('./controller/home.php');
+            $obj = new home;
 
         }
     }

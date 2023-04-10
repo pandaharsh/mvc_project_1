@@ -14,6 +14,12 @@ class controller
         include('./view/' . $name . '.php');
     }
 
+    public function blogview()
+    {
+
+        include("/view/user_blog.php");
+    }
+
 }
 
 ?>
