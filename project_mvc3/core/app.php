@@ -15,6 +15,7 @@ class app
     {
         if (isset($_GET['page'])) {
 
+            include("./view/nav.php");
             $this->param = $_GET['page'];
         }
 
