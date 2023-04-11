@@ -1,33 +1,23 @@
+<style>
+    .container {
+        margin-top: 10px;
+    }
+</style>
+
 <?php
 
-$form = '
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-    </head>
-    <body>
-        <form action="index.php" method="post">
-            User name:
-            <input type="text" name="username" /><br /><br />
-            Title:
-            <input type="text" name="title" /><br /><br />
-            Description: 
-            <input type="text" name="description" /><br /><br />
-            <input type="submit"  value="Sign up"/><br>
-        </form>
-        <a href="index.php?action=user_blog">
-            <button>view</button>
-        </a> <br><br>       
-
-    </body>
-</html>
+echo '
+<div class="container">
+    <form action="index.php" method="post">
+        User name:
+        <input type="text" name="username" /><br /><br />
+        Title:
+        <input type="text" name="title" /><br /><br />
+        Description: 
+        <input type="text" name="description" /><br /><br />
+        <input type="submit"  value="Sign up"/><br>
+    </form>
+</div>           
 ';
-
-// rendering form
-echo $form;
 
 ?>

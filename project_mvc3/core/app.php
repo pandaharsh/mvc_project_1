@@ -2,7 +2,7 @@
 
 class app
 {
-    protected $param = 'home';
+    protected $param = 'signup';
 
     public function __construct()
     {
