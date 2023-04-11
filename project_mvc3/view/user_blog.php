@@ -3,37 +3,46 @@
         margin-top: 10px;
         border: 2px solid black;
         letter-spacing: 1px;
+        width: 50%;
+        text-align: center;
+
+    }
+
+    h3,
+    h4,
+    p {
         font-size: 20px;
+        margin: 30px 0px;
     }
 </style>
 
 
 <?php
 
-class blogsview
-{
-    public function __construct($con, $DB_NAME, $TABLE_NAME, $username)
-    {
+$con = mysqli_connect('localhost', 'root');
+$DB_NAME = "Blogs";
+$TABLE_NAME = "User_blog";
 
-        mysqli_select_db($con, $DB_NAME);
+mysqli_select_db($con, $DB_NAME);
 
-        $sql = " SELECT * from $TABLE_NAME WHERE username=>'$username' ";
-        $result = mysqli_query($con, $sql);
-        $num = mysqli_num_rows($result);
+$sql = " SELECT * from $TABLE_NAME ";
+$result = mysqli_query($con, $sql);
+$num = mysqli_num_rows($result);
 
-        if ($num > 0) {
+if ($num > 0) {
+    for ($i = 0; $i < $num; $i++) {
 
-            echo "<div class=info>";
-            $row = mysqli_fetch_array($result);
+        echo "<div class=info>";
 
-            echo ("<h1>Hello!! my name is " . $row["username"] . "</h1>" . "<br>" . "<h1> Title </h1> <br>" . $row["title"] . "<h1> Description </h1> <br>" . $row["description"]);
+        $row = mysqli_fetch_array($result);
 
-            echo "</div>";
+        echo ("<h4>" . $row["username"] . "</h4>" . "<h3> Title </h3> <p>" . $row["title"] . "</p> <h3> Description </h3> <p>" . $row["description"] . "</p>");
 
-        } else {
-            echo "no data in the table";
-        }
+        echo "</div>";
     }
+
+} else {
+    echo "no data in the table";
 }
 
 ?>

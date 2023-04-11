@@ -6,20 +6,15 @@ class controller
     {
         include("./model/Database.php");
 
-        $db = new database($username, $title, $description);
+        $db = new database;
+        $db->connect($username, $title, $description);
 
     }
     public function view($name)
     {
         include('./view/' . $name . '.php');
+
     }
-
-    public function blogview()
-    {
-
-        include("/view/user_blog.php");
-    }
-
 }
 
 ?>

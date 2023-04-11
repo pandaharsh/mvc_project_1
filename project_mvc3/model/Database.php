@@ -5,7 +5,7 @@ class database
     protected $DB_NAME = "Blogs";
     protected $TABLE_NAME = "User_blog";
 
-    public function __construct($username, $title, $description)
+    public function connect($username, $title, $description)
     {
         $con = mysqli_connect('localhost', 'root');
 
