@@ -12,6 +12,7 @@ class controller
     }
     public function view($name)
     {
+        require_once("./model/connection.php");
         include('./view/' . $name . '.php');
 
     }

@@ -7,16 +7,16 @@ class app
     public function __construct()
     {
 
+        include("./view/nav.php");
         $this->parseurl();
 
     }
 
     public function parseurl()
     {
-        if (isset($_GET['page'])) {
+        if (isset($_GET['action'])) {
 
-            include("./view/nav.php");
-            $this->param = $_GET['page'];
+            $this->param = $_GET['action'];
         }
 
         if (file_exists('./controller/' . $this->param . '.php')) {

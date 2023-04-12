@@ -2,12 +2,14 @@
 class database
 {
     protected $conn;
-    protected $DB_NAME = "Blogs";
-    protected $TABLE_NAME = "User_blog";
+    protected $TABLE_NAME;
+    protected $DB_NAME;
 
     public function connect($username, $title, $description)
     {
-        $con = mysqli_connect('localhost', 'root');
+        require_once("./model/connection.php");
+        $this->DB_NAME = $DB_NAME;
+        $this->TABLE_NAME = $TABLE_NAME;
 
         if ($con) {
             $this->conn = $con;
