@@ -24,22 +24,25 @@ mysqli_select_db($con, $DB_NAME);
 if (isset($_GET['username'])) {
 
     $username = $_GET['username'];
-    $sql = " SELECT * from $TABLE_NAME Where username= '$username' ";
+    $title = $_GET['title'];
+    $sql = " SELECT * from $TABLE_NAME Where username = '$username' AND title ='$title' ";
     $result = mysqli_query($con, $sql);
     $num = mysqli_num_rows($result);
 
-    if ($num > 0) {
+    if ($sql) {
+        if ($num > 0) {
 
-        echo "<div class=info>";
+            echo "<div class=info>";
 
-        $row = mysqli_fetch_array($result);
+            $row = mysqli_fetch_array($result);
 
-        echo ("<h4>" . $row["username"] . "</h4>" . "<h3> Title </h3> <p>" . $row["title"] . "</p> <h3> Description </h3> <p>" . $row["description"] . "</p>");
+            echo ("<h4>" . $row["username"] . "</h4>" . "<h3> Title </h3> <p>" . $row["title"] . "</p> <h3> Description </h3> <p>" . $row["description"] . "</p>");
 
-        echo "</div>";
+            echo "</div>";
 
-    } else {
-        echo "no data in the table";
+        } else {
+            echo "no data in the table";
+        }
     }
 
 }

@@ -26,7 +26,7 @@ if ($num > 0) {
 
         $row = mysqli_fetch_array($result);
         echo "<li><div class=info>";
-        echo ('<a href="./index.php?action=view&username=' . $row["username"] . '">' . $row["username"] . "</a></br>");
+        echo ('<a href="./index.php?action=view&username=' . $row["username"] . '&title=' . $row["title"] . '">' . $row["username"] . "</a></br>");
         echo "</div></li>";
     }
     echo "</ul>";
