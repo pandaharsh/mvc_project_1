@@ -7,7 +7,7 @@ class database
 
     public function connect($username, $title, $description)
     {
-        require_once("./model/connection.php");
+        include("./model/connection.php");
         $this->DB_NAME = $DB_NAME;
         $this->TABLE_NAME = $TABLE_NAME;
 

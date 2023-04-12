@@ -25,7 +25,7 @@ if ($num > 0) {
     for ($i = 0; $i < 5; $i++) {
 
         $row = mysqli_fetch_array($result);
-        echo "<li><div class=info>";
+        echo '<img src="./view/img/t-2.jpeg" alt="alt img"><br><li><div class=info>';
         echo ('<a href="./index.php?action=view&username=' . $row["username"] . '&title=' . $row["title"] . '">' . $row["username"] . "</a></br>");
         echo "</div></li>";
     }
